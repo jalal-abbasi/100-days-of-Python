@@ -1,0 +1,41 @@
+to have a title in the for of ASCII:
+http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
+remember to put in a doc string (meaning to put it inside """ """)
+
+to make a TO-Do list:
+https://listmoz.com/#p7QMDtT3h0SHMK2Qy6yr
+
+
+Step through Execution to see the values:
+https://pythontutor.com/
+
+creating a flowchart:
+flowchart: https://app.diagrams.net/
+
+one of the best websites for having a color pallet and also the hex code of those colors is:
+colorhunt.co
+
+is python dynamically or strongly typed?
+https://stackoverflow.com/questions/11328920/is-python-strongly-typed
+
+TKinter
+https://tkdocs.com/tutorial/widgets.html#entry
+
+Write to files
+https://www.w3schools.com/python/python_file_write.asp
+
+python project useful for copying or pasting applications on the clipboard.
+https://pypi.org/project/pyperclip/
+
+google translate syntax to use in google sheets
+https://support.google.com/docs/answer/3093331?hl=en-GB
+
+site for finding subtitles:
+https://www.opensubtitles.org/en/search/subs
+
+wikipedia words frequency lists
+https://en.wiktionary.org/wiki/Wiktionary:Frequency_lists
+
+hermitdave github for words frequecy list based on subtitles 
+https://github.com/hermitdave/FrequencyWords/tree/master/content/2018
+

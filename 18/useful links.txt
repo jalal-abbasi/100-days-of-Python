@@ -1,0 +1,9 @@
+https://cs111.wellesley.edu/reference/colors
+https://trinket.io/docs/colors
+https://docs.python.org/3/library/turtle.html
+
+https://www.w3schools.com/colors/colors_rgb.asp
+
+colorgram package:
+you give it a picture and it gives you the colors inside the package.
+https://pypi.org/project/colorgram.py/
