@@ -6,14 +6,24 @@
 # 3. If step 2 is true, pick a random letter from letter templates and replace the [NAME] with the person's actual name from birthdays.csv
 
 # 4. Send the letter generated in step 3 to that person's email address.
-import pandas
+import pandas as pd
 import smtplib
 import datetime as dt
 import random
 
-letters_directory = "letter_templates/letter_1.txt"
-with open(letters_directory, mode='r') as letter:
-    letter_list = letter.readlines()
-    print(letter_list)
+now = dt.datetime.now()
+today = now.day
+current_month = now.month
+
+birthdays = pd.read_csv("birthdays.csv")
+# dataframe containing the data of people whose birthday day is the same as today
+same_day_of_today = birthdays[birthdays.day == today]
+# dataframe containing the data of people whose birthday day is the same as today's day and month
+have_birthday = same_day_of_today[same_day_of_today.month == current_month]
+# List of celebrants' names
+birthday_celebrants = have_birthday.name.to_list()
+
 sender_email = "s.jalalabbasi37@gmail.com"
 password = "ckqwsmwawcqtafcr"
+
+
