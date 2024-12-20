@@ -38,3 +38,13 @@ for celebrant in birthday_celebrants:
         message = ''.join(letter_list)
 
     celebrant_email = have_birthday[have_birthday.name == celebrant].email.to_list()[0]
+
+    with smtplib.SMTP("smtp.gmail.com") as connection:
+        connection.starttls()
+        connection.login(user=sender_email, password=password)
+        connection.sendmail(from_addr=sender_email,
+                            to_addrs=celebrant_email,
+                            msg=f"Subject:Happy Birthday! \n\n {message}"
+                            )
+
+
