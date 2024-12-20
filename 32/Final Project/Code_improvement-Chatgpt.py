@@ -29,6 +29,7 @@ def get_birthday_message(name):
     Reads a random letter template, replaces [NAME] with the actual name.
     - name: The name of the birthday person.
     """
+    # also instead of random.choice we could have used random.randint(1,3)
     letter_path = f"letter_templates/letter_{random.choice([1, 2, 3])}.txt"
     with open(letter_path, mode='r') as file:
         letter_content = file.read()  # Me: so here instead of readline, we get the file as a text
