@@ -20,6 +20,8 @@ birthdays = pd.read_csv("birthdays.csv")
 same_day_of_today = birthdays[birthdays.day == today]
 # dataframe containing the data of people whose birthday day is the same as today's day and month
 have_birthday = same_day_of_today[same_day_of_today.month == current_month]
+today_birthdays = birthdays[(birthdays["day"] == today) & (birthdays["month"] == current_month)]
+
 # List of celebrants' names
 birthday_celebrants = have_birthday.name.to_list()
 
@@ -38,3 +40,13 @@ for celebrant in birthday_celebrants:
         message = ''.join(letter_list)
 
     celebrant_email = have_birthday[have_birthday.name == celebrant].email.to_list()[0]
+
+    with smtplib.SMTP("smtp.gmail.com") as connection:
+        connection.starttls()
+        connection.login(user=sender_email, password=password)
+        connection.sendmail(from_addr=sender_email,
+                            to_addrs=celebrant_email,
+                            msg=f"Subject:Happy Birthday! \n\n {message}"
+                            )
+
+
