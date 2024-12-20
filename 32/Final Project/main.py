@@ -26,4 +26,15 @@ birthday_celebrants = have_birthday.name.to_list()
 sender_email = "s.jalalabbasi37@gmail.com"
 password = "ckqwsmwawcqtafcr"
 
+for celebrant in birthday_celebrants:
+    rand_int = random.choice([1, 2, 3])
+    letters_directory = f"letter_templates/letter_{rand_int}.txt"
+    with open(letters_directory, mode='r') as letter:
+        letter_list = letter.readlines()
+        if rand_int == 2:
+            letter_list[0] = f'Hey {celebrant},\n'
+        else:
+            letter_list[0] = f'Dear {celebrant},\n'
+        message = ''.join(letter_list)
 
+    celebrant_email = have_birthday[have_birthday.name == celebrant].email.to_list()[0]
