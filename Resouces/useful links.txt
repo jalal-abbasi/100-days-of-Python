@@ -39,3 +39,10 @@ https://en.wiktionary.org/wiki/Wiktionary:Frequency_lists
 hermitdave github for words frequecy list based on subtitles 
 https://github.com/hermitdave/FrequencyWords/tree/master/content/2018
 
+Pythonanywhere: a free tool for running your python program on a cload to automate a task for example everyday
+https://www.pythonanywhere.com/
+
+HTTP status code glossary
+https://www.webfx.com/web-development/glossary/http-status-codes/
+
+Json Viewer Awsome is a chrome extension for viewing better the JSON files.
