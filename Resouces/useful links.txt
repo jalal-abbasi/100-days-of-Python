@@ -46,3 +46,6 @@ HTTP status code glossary
 https://www.webfx.com/web-development/glossary/http-status-codes/
 
 Json Viewer Awsome is a chrome extension for viewing better the JSON files.
+
+HTTP code errors definitions:
+https://www.webfx.com/web-development/glossary/http-status-codes/
