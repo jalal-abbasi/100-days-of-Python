@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9874291b-285c-455d-bcad-79778ede2449" name="Changes" comment="adding the final project folder">
+    <list default="true" id="9874291b-285c-455d-bcad-79778ede2449" name="Changes" comment="checking if ISS is in my range of location and email me">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Final project/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Final project/main.py" afterDir="false" />
     </list>
@@ -112,7 +112,14 @@
       <option name="project" value="LOCAL" />
       <updated>1737565918873</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="checking if ISS is in my range of location and email me">
+      <created>1737573766055</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1737573766055</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -132,6 +139,7 @@
     <MESSAGE value="getting hold of the site api and using the json to update the text in the canvas" />
     <MESSAGE value="putting the Tkinter in a new folder and the adding the final project folder" />
     <MESSAGE value="adding the final project folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding the final project folder" />
+    <MESSAGE value="checking if ISS is in my range of location and email me" />
+    <option name="LAST_COMMIT_MESSAGE" value="checking if ISS is in my range of location and email me" />
   </component>
 </project>
