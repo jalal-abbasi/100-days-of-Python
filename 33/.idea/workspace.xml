@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9874291b-285c-455d-bcad-79778ede2449" name="Changes" comment="using Tkinter to build the application">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="9874291b-285c-455d-bcad-79778ede2449" name="Changes" comment="getting hold of the site api and using the json to update the text in the canvas" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,7 +77,14 @@
       <option name="project" value="LOCAL" />
       <updated>1737560383610</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="getting hold of the site api and using the json to update the text in the canvas">
+      <created>1737564757931</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1737564757931</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -96,6 +100,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="using Tkinter to build the application" />
-    <option name="LAST_COMMIT_MESSAGE" value="using Tkinter to build the application" />
+    <MESSAGE value="getting hold of the site api and using the json to update the text in the canvas" />
+    <option name="LAST_COMMIT_MESSAGE" value="getting hold of the site api and using the json to update the text in the canvas" />
   </component>
 </project>
