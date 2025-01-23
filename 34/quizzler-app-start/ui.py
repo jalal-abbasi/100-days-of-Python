@@ -7,10 +7,13 @@ class QuizzInterface:
         self.window = Tk()
         self.window.title("Quizler")
         self.window.configure(background=THEME_COLOR, padx=20, pady=20)
+
+        # Canvas
         self.canvas = Canvas(self.window, bg="white", height=250, width=300)
         self.canvas.create_text(150, 125, fill="black", font=("Arial", 20, "italic"), text="hi")
         self.canvas.grid(column=0, columnspan=2, row=1, pady=20)
 
+        # True and False Buttons
         true_image = PhotoImage(file=r"images\true.png")
         self.true_button = Button(image=true_image, highlightthickness=0)
         self.true_button.grid(row=2, column=0)
@@ -19,6 +22,7 @@ class QuizzInterface:
         self.false_button = Button(image=false_image, highlightthickness=0)
         self.false_button.grid(row=2, column=1)
 
+        # Label
         self.label = Label(text="Score: 0", bg=THEME_COLOR, fg="white")
         self.label.grid(row=0, column=1)
 
