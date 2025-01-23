@@ -1,3 +1,9 @@
+import requests
+
+response = requests.get("https://opentdb.com/api.php")
+print(response)
+
+
 question_data = [
     {
         "category": "Science: Computers",
