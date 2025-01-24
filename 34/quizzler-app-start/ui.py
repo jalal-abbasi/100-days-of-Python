@@ -57,7 +57,8 @@ class QuizInterface:
         if self.quiz.still_has_questions():
             self.canvas.itemconfig(self.canvas_text, text=self.quiz.next_question())
         else:
-            self.canvas.itemconfig(self.canvas_text, text="The Fucking Game is Over!")
+            self.canvas.itemconfig(self.canvas_text, text=f"The Fucking Game is Over! "
+                                                          f"\nYour score is {self.quiz.score}/10")
             self.true_button.configure(state="disabled")
             self.false_button.configure(state="disabled")
 
