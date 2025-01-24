@@ -1,3 +1,4 @@
+import time
 from tkinter import *
 from quiz_brain import QuizBrain
 THEME_COLOR = "#375362"
@@ -12,7 +13,7 @@ class QuizInterface:
         self.question_text = self.quiz.next_question()
 
         # Canvas
-        self.canvas = Canvas(bg="white", height=250, width=300)  # no need to feed the root widget
+        self.canvas = Canvas(bg="white", height=250, width=300, highlightthickness=0)  # no need to feed the root widget
         # we get the output of create_text inside a new variable: the output is the widget id, so to change it later
         self.canvas_text = self.canvas.create_text(
             150, 125,
@@ -36,18 +37,26 @@ class QuizInterface:
         self.label.grid(row=0, column=1)
 
         self.window.mainloop()
+
     def click_true_button(self):
-        self.quiz.check_answer("True")
-        self.generate_next_question()
+        self.give_feedback_and_delay(self.quiz.check_answer("True"))
 
     def click_false_button(self):
-        self.quiz.check_answer("False")
-        self.generate_next_question()
+        self.give_feedback_and_delay(self.quiz.check_answer("False"))
+
+    def give_feedback_and_delay(self, is_correct):
+        if is_correct:
+            self.canvas.configure(bg="green")
+        else:
+            self.canvas.configure(bg="red")
+        self.window.after(500, self.generate_next_question)
 
     def generate_next_question(self):
+        self.canvas.configure(bg="white")
         self.label.configure(text=f"Score: {self.quiz.score}")
         if self.quiz.still_has_questions():
             self.canvas.itemconfig(self.canvas_text, text=self.quiz.next_question())
+            # self.canvas.configure(bg="yellow")
         else:
             print("Game is Over!")
             self.true_button.configure(state="disabled")
