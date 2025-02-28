@@ -53,7 +53,7 @@ https://www.webfx.com/web-development/glossary/http-status-codes/
 online json viewer
 https://jsonviewer.stack.hu/
 
-sending sms messages using python code using Twilo
+sending sms messages using python code using Twilio
 https://www.twilio.com/docs/messaging/quickstart/python
 
 showing and mirroring the phone screen on the PC monitor
