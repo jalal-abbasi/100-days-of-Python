@@ -3,8 +3,8 @@ from twilio.rest import Client
 
 
 twilio_phone_number = "+18172413781"
-account_sid = "Arr4512e"
-auth_token = "1213"
+account_sid = "ACe34c895e1146f0a1b54f5e16d8c4512e"
+auth_token = "1ac44c8200213c8fd1456d747c7b1f6b"
 
 api_key = "30b8331fb24765f13510612b4d8ae50e"
 parameters = {
