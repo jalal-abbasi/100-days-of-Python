@@ -1,8 +1,18 @@
+import requests
+import os
 STOCK = "TSLA"
 COMPANY_NAME = "Tesla Inc"
 
 STOCK_ENDPOINT = "https://www.alphavantage.co/query"
 NEWS_ENDPOINT = "https://newsapi.org/v2/everything"
+
+news_api = os.environ.get("NEWS_API_KEY")
+alpha_vantage_api = os.environ.get("ALFA_VANTAGE_API")
+
+
+
+
+
 
 
 ## STEP 1: Use https://newsapi.org/docs/endpoints/everything
