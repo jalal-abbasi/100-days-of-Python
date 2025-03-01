@@ -61,15 +61,22 @@ if True:
     response = requests.get(NEWS_ENDPOINT, params=news_parameters)
     response.raise_for_status()
 
-    data = response.json()
-    title = data["articles"][0]["title"]
-    url = data["articles"][0]["url"]
+    news_list = []
+    for index in range(0, 2):
+        data = response.json()
+        title = data["articles"][index]["title"]
+        url = data["articles"][index]["url"]
 
-    description = (data["articles"][0]["description"])
-    index = description.index(".")
-    description = description[0:index +1]
-    print(description)
+        description = (data["articles"][index]["description"])
 
+        news = {
+            "Title" : title,
+            "url" : url,
+            "Description" : description,
+        }
+        news_list.append(news)
+
+print(news_list)
 
 
 
