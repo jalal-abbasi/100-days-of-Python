@@ -29,22 +29,22 @@ stock_parameters = {
     "symbol" : "TSLA",
     "apikey" : STOCK_API,
 }
-response = requests.get(STOCK_ENDPOINT, params=stock_parameters)
-response.raise_for_status()
-data = response.json()
-
-today = datetime.date.today()
-delta = datetime.timedelta(days=1)
-yesterday = today - delta
-day_before_yesterday = yesterday - delta
-
-yesterday = str(yesterday)
-day_before_yesterday = str(day_before_yesterday)
-
-yesterday_cv = float(data["Time Series (Daily)"][yesterday]['4. close'])
-day_before_yesterday_cv = float(data["Time Series (Daily)"][day_before_yesterday]['4. close'])
-
-is_high_change, change_percentile = calculate_change_percentage(yesterday_cv, day_before_yesterday_cv)
+# response = requests.get(STOCK_ENDPOINT, params=stock_parameters)
+# response.raise_for_status()
+# data = response.json()
+#
+# today = datetime.date.today()
+# delta = datetime.timedelta(days=1)
+# yesterday = today - delta
+# day_before_yesterday = yesterday - delta
+#
+# yesterday = str(yesterday)
+# day_before_yesterday = str(day_before_yesterday)
+#
+# yesterday_cv = float(data["Time Series (Daily)"][yesterday]['4. close'])
+# day_before_yesterday_cv = float(data["Time Series (Daily)"][day_before_yesterday]['4. close'])
+#
+# is_high_change, change_percentile = calculate_change_percentage(yesterday_cv, day_before_yesterday_cv)
 
 
 
@@ -62,6 +62,15 @@ if True:
     response.raise_for_status()
 
     data = response.json()
+    title = data["articles"][0]["title"]
+    url = data["articles"][0]["url"]
+
+    description = (data["articles"][0]["description"])
+    index = description.index(".")
+    description = description[0:index +1]
+    print(description)
+
+
 
 
 
