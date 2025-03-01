@@ -1,8 +1,8 @@
-from turtledemo.clock import current_day
+
 
 import requests
 import os
-import time
+import datetime
 
 STOCK = "TSLA"
 COMPANY_NAME = "Tesla Inc"
@@ -21,9 +21,13 @@ stock_parameters = {
 }
 response = requests.get(STOCK_ENDPOINT, params = stock_parameters)
 response.raise_for_status()
-
 data = response.json()
-print(float(data["Time Series (Daily)"]['2025-02-28']['4. close']))
+
+today = datetime.date.today()
+delta = datetime.timedelta(days=1)
+yesterday = today - delta
+
+# print(float(data["Time Series (Daily)"]['2025-02-28']['4. close']))
 
 
 
