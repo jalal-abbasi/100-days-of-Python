@@ -26,8 +26,15 @@ data = response.json()
 today = datetime.date.today()
 delta = datetime.timedelta(days=1)
 yesterday = today - delta
+day_before_yesterday = yesterday - delta
 
-# print(float(data["Time Series (Daily)"]['2025-02-28']['4. close']))
+yesterday = str(yesterday)
+day_before_yesterday = str(day_before_yesterday)
+
+yesterday_closing_value = float(data["Time Series (Daily)"][yesterday]['4. close'])
+day_before_yesterday_closing_value = float(data["Time Series (Daily)"][day_before_yesterday]['4. close'])
+
+print(f"{yesterday_closing_value} \n{day_before_yesterday_closing_value}")
 
 
 
