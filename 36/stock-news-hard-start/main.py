@@ -31,7 +31,7 @@ def calculate_change_percentage(yesterday_value, day_before_yesterday_value):
 
 stock_parameters = {
     "function" : "TIME_SERIES_DAILY",
-    "symbol" : "TSLA",
+    "symbol" : STOCK,
     "apikey" : STOCK_API,
 }
 
@@ -60,9 +60,9 @@ is_high_change, change_percentile = calculate_change_percentage(yesterday_cv, da
 #HINT 1: Think about using the Python Slice Operator
 if is_high_change:
     news_parameters = {
-        "q" : "Tesla",
+        "q" : COMPANY_NAME,
         "pageSize" : 3,
-        "apikey" : NEWS_API
+        "apiKey" : NEWS_API
     }
     response = requests.get(NEWS_ENDPOINT, params=news_parameters)
     response.raise_for_status()
@@ -88,7 +88,7 @@ if is_high_change:
         else:
             arrow = "🔻"
         message = client.messages.create(
-            body=f"TSLA: {arrow}{abs(change_percentile)}%\n"
+            body=f"{STOCK}: {arrow}{abs(change_percentile)}%\n"
                  f"Headline: {news["Headline"]}\nBrief: {news["Brief"]}\nURL: {news["url"]}",
             from_=twilio_phone_number,
             to="+393515024648",
