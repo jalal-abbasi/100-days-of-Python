@@ -1,5 +1,9 @@
+from turtledemo.clock import current_day
+
 import requests
 import os
+import time
+
 STOCK = "TSLA"
 COMPANY_NAME = "Tesla Inc"
 
@@ -10,7 +14,16 @@ news_api = os.environ.get("NEWS_API_KEY")
 alpha_vantage_api = os.environ.get("ALFA_VANTAGE_API")
 
 
+stock_parameters = {
+    "function" : "TIME_SERIES_DAILY",
+    "symbol" : "TSLA",
+    "apikey" : alpha_vantage_api,
+}
+response = requests.get(STOCK_ENDPOINT, params = stock_parameters)
+response.raise_for_status()
 
+data = response.json()
+print(float(data["Time Series (Daily)"]['2025-02-28']['4. close']))
 
 
 
