@@ -1,5 +1,5 @@
-
-
+import urllib
+from urllib.parse import urlencode
 import requests
 import os
 import datetime
@@ -11,7 +11,7 @@ STOCK_ENDPOINT = "https://www.alphavantage.co/query"
 NEWS_ENDPOINT = "https://newsapi.org/v2/everything"
 
 NEWS_API = os.environ.get("NEWS_API_KEY")
-ALFA_VANTAGE_API = os.environ.get("ALFA_VANTAGE_API")
+STOCK_API = os.environ.get("ALFA_VANTAGE_API")
 
 def calculate_change_percentage(yesterday_value, day_before_yesterday_value):
     difference = yesterday_value - day_before_yesterday_value
@@ -27,9 +27,9 @@ def calculate_change_percentage(yesterday_value, day_before_yesterday_value):
 stock_parameters = {
     "function" : "TIME_SERIES_DAILY",
     "symbol" : "TSLA",
-    "apikey" : ALFA_VANTAGE_API,
+    "apikey" : STOCK_API,
 }
-response = requests.get(STOCK_ENDPOINT, params = stock_parameters)
+response = requests.get(STOCK_ENDPOINT, params=stock_parameters)
 response.raise_for_status()
 data = response.json()
 
@@ -46,12 +46,22 @@ day_before_yesterday_cv = float(data["Time Series (Daily)"][day_before_yesterday
 
 is_high_change, change_percentile = calculate_change_percentage(yesterday_cv, day_before_yesterday_cv)
 
-print(f"{is_high_change} \n {change_percentile}")
+
 
 
 ## STEP 2: Use https://newsapi.org/docs/endpoints/everything
 # Instead of printing ("Get News"), actually fetch the first 3 articles for the COMPANY_NAME. 
 #HINT 1: Think about using the Python Slice Operator
+if True:
+    news_parameters = {
+        "q" : "Tesla",
+        "pageSize" : 3,
+        "apikey" : NEWS_API
+    }
+    response = requests.get(NEWS_ENDPOINT, params=news_parameters)
+    response.raise_for_status()
+
+    data = response.json()
 
 
 
