@@ -10,14 +10,24 @@ COMPANY_NAME = "Tesla Inc"
 STOCK_ENDPOINT = "https://www.alphavantage.co/query"
 NEWS_ENDPOINT = "https://newsapi.org/v2/everything"
 
-news_api = os.environ.get("NEWS_API_KEY")
-alpha_vantage_api = os.environ.get("ALFA_VANTAGE_API")
+NEWS_API = os.environ.get("NEWS_API_KEY")
+ALFA_VANTAGE_API = os.environ.get("ALFA_VANTAGE_API")
 
+def calculate_change_percentage(yesterday_value, day_before_yesterday_value):
+    difference = yesterday_value - day_before_yesterday_value
+    change_percentage = difference/day_before_yesterday_value * 100
+    return abs(change_percentage) > 5, round(change_percentage, 2)
+
+
+## STEP 1: Use https://newsapi.org/docs/endpoints/everything
+# When STOCK price increase/decreases by 5% between yesterday and the day before yesterday then print("Get News").
+#HINT 1: Get the closing price for yesterday and the day before yesterday. Find the positive difference between the two prices. e.g. 40 - 20 = -20, but the positive difference is 20.
+#HINT 2: Work out the value of 5% of yerstday's closing stock price. 
 
 stock_parameters = {
     "function" : "TIME_SERIES_DAILY",
     "symbol" : "TSLA",
-    "apikey" : alpha_vantage_api,
+    "apikey" : ALFA_VANTAGE_API,
 }
 response = requests.get(STOCK_ENDPOINT, params = stock_parameters)
 response.raise_for_status()
@@ -31,19 +41,12 @@ day_before_yesterday = yesterday - delta
 yesterday = str(yesterday)
 day_before_yesterday = str(day_before_yesterday)
 
-yesterday_closing_value = float(data["Time Series (Daily)"][yesterday]['4. close'])
-day_before_yesterday_closing_value = float(data["Time Series (Daily)"][day_before_yesterday]['4. close'])
+yesterday_cv = float(data["Time Series (Daily)"][yesterday]['4. close'])
+day_before_yesterday_cv = float(data["Time Series (Daily)"][day_before_yesterday]['4. close'])
 
-print(f"{yesterday_closing_value} \n{day_before_yesterday_closing_value}")
+is_high_change, change_percentile = calculate_change_percentage(yesterday_cv, day_before_yesterday_cv)
 
-
-
-
-## STEP 1: Use https://newsapi.org/docs/endpoints/everything
-# When STOCK price increase/decreases by 5% between yesterday and the day before yesterday then print("Get News").
-#HINT 1: Get the closing price for yesterday and the day before yesterday. Find the positive difference between the two prices. e.g. 40 - 20 = -20, but the positive difference is 20.
-#HINT 2: Work out the value of 5% of yerstday's closing stock price. 
-
+print(f"{is_high_change} \n {change_percentile}")
 
 
 ## STEP 2: Use https://newsapi.org/docs/endpoints/everything
