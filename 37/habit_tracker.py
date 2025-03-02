@@ -42,11 +42,21 @@ create_pixel_url = f"{create_graph_url}/codingtracker"
 #
 # requests.post(url=create_pixel_url, json=create_pixel_data, headers=HEADERS)
 
-update_pixel_url = f"{create_pixel_url}/{yesterday.strftime("%Y%m%d")}"
+# update_pixel_url = f"{create_pixel_url}/{yesterday.strftime("%Y%m%d")}"
+#
+# update_pixel_data = {
+#     'quantity' : '220'
+# }
+#
+# response = requests.put(url=update_pixel_url, json=update_pixel_data, headers=HEADERS)
 
-update_pixel_data = {
-    'quantity' : '220'
+
+day_before_yesterday = datetime(year=2025, month=2, day=28)
+create_pixel_url = f"{create_graph_url}/codingtracker"
+create_pixel_data = {
+    'date' : day_before_yesterday.strftime("%Y%m%d"),
+    'quantity' : '100',
 }
 
-response = requests.put(url=update_pixel_url, json=update_pixel_data, headers=HEADERS)
+response = requests.post(url=create_pixel_url, json=create_pixel_data, headers=HEADERS)
 print(response.text)
