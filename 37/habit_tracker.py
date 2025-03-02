@@ -32,3 +32,13 @@ create_graph_data = {
 response = requests.post(url=create_graph_url, json=create_graph_data, headers=HEADERS)
 print(response.text)
 
+today = datetime.now()
+yesterday = datetime(year=2025, month=3, day=1)
+create_pixel_url = f"{create_graph_url}/codingtracker"
+create_pixel_data = {
+    'date' : yesterday.strftime("%Y%m%d"),
+    'quantity' : '200',
+}
+
+response = requests.post(url=create_pixel_url, json=create_pixel_data, headers=HEADERS)
+print(response.text)
