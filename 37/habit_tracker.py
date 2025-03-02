@@ -52,11 +52,15 @@ create_pixel_url = f"{create_graph_url}/codingtracker"
 
 
 day_before_yesterday = datetime(year=2025, month=2, day=28)
-create_pixel_url = f"{create_graph_url}/codingtracker"
-create_pixel_data = {
-    'date' : day_before_yesterday.strftime("%Y%m%d"),
-    'quantity' : '100',
-}
+# create_pixel_url = f"{create_graph_url}/codingtracker"
+# create_pixel_data = {
+#     'date' : day_before_yesterday.strftime("%Y%m%d"),
+#     'quantity' : '100',
+# }
+#
+# response = requests.post(url=create_pixel_url, json=create_pixel_data, headers=HEADERS)
+# print(response.text)
 
-response = requests.post(url=create_pixel_url, json=create_pixel_data, headers=HEADERS)
+deleting_pixel_url = f"{create_pixel_url}/{day_before_yesterday.strftime("%Y%m%d")}"
+response = requests.delete(url=deleting_pixel_url,headers=HEADERS)
 print(response.text)
