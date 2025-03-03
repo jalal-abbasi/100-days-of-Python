@@ -12,8 +12,9 @@ headers = {
     "x-app-key" : app_key,
 }
 
+user_query = input("what exercise did you do today? ")
 app_parameters = {
-    "query" : "I ran three miles",
+    "query" : user_query,
 }
 
 response = requests.post(url=ENDPOINT, json=app_parameters, headers=headers)
