@@ -1,3 +1,4 @@
 class DataManager:
     #This class is responsible for talking to the Google Sheet.
-    pass
+    def __init__(self, api):
+        self.api_key = api
