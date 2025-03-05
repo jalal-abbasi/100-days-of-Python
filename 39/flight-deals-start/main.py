@@ -1,4 +1,5 @@
 #This file will need to use the DataManager,FlightSearch, FlightData, NotificationManager classes to achieve the program requirements.
+import requests
 SHEETY_ENDPOINT ="https://api.sheety.co/14a00bdc0fae03aacc590eb008c2c254/flightDeals/prices"
 AMADEUS_API_KEY = "SECRET"
 AMADEUS_API_SECRET = "SECRET"
